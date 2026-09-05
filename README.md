@@ -1,41 +1,56 @@
 # 🚀 Tanjim Ahmed — DevOps Portfolio
 
-Welcome to my personal **DevOps Engineer Portfolio**.
+> Personal DevOps Engineer portfolio showcasing my projects, skills, experience, and hands-on learning journey.
 
-This portfolio showcases my hands-on journey in **Linux, Git, GitHub, Docker, CI/CD, Cloud Engineering, and DevOps practices**, along with the projects and skills I've developed through continuous learning and practical work.
+## 📸 Portfolio Preview
+
+![Portfolio Preview](screenshots/portfolio-home.png)
 
 ## 🌐 Live Portfolio
 
-🔗 **[View Portfolio](https://tanjim-ahmed-devops-portfolio.netlify.app/)**
+🔗 **[Visit My Portfolio](https://tanjim-ahmed-devops-portfolio.netlify.app/)**
 
 ## 🛠️ Technologies & Tools
 
-* Linux
-* Git & GitHub
-* Docker
-* CI/CD
-* GitHub Actions
-* Cloud Technologies
-* Bash / Shell Scripting
-* Networking
-* Windows Server & Active Directory
+* 🐧 Linux
+* 🔧 Git & GitHub
+* 🐳 Docker
+* ⚙️ CI/CD
+* 🤖 GitHub Actions
+* ☁️ Cloud Technologies
+* 💻 Bash / Shell Scripting
+* 🌐 Networking
+* 🪟 Windows Server & Active Directory
 
-## 📂 What's Inside
+## 📌 Features
 
-* DevOps projects and hands-on work
-* GitHub repositories
-* Technical skills
-* Professional experience
+* DevOps projects showcase
+* Technical skills and experience
+* GitHub repository links
 * Resume
-* Learning journey
-* Contact & social profiles
+* LinkedIn profile
+* Direct email contact
+* Responsive portfolio design
+
+## 📂 Project Structure
+
+```text
+tanjim-devops-portfolio/
+├── index.html
+├── resume.pdf
+├── screenshots/
+│   └── portfolio-home.png
+└── assets/
+```
 
 ## 🔗 Connect With Me
 
-* **LinkedIn:** [Tanjim Ahmed](https://www.linkedin.com/in/tanahmedd)
-* **GitHub:** [tanahmeeedsx](https://github.com/tanahmeeedsx)
-* **Portfolio:** [tanjim-ahmed-devops-portfolio.netlify.app](https://tanjim-ahmed-devops-portfolio.netlify.app/)
+* 💼 [LinkedIn](https://www.linkedin.com/in/tanahmedd)
+* 🐙 [GitHub](https://github.com/tanahmeeedsx)
+* 🌐 [Portfolio](https://tanjim-ahmed-devops-portfolio.netlify.app/)
 
 ---
 
-⭐ If you find this portfolio useful, feel free to explore my repositories and connect with me.
+⭐ Built with curiosity, consistency, and a lot of terminal commands.
+
+**Thanks for visiting!**
