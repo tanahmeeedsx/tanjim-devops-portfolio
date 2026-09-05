@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tanjim Ahmed — DevOps Intern at Springer Capital. Linux, Git/GitHub, Docker, CI/CD, AWS, HashiCorp Nomad and Grafana Loki, built on a networking and Windows Server systems-administration foundation.">
+    <meta name="theme-color" content="#0b0f14">
+    <title>Tanjim Ahmed | DevOps Engineer</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0f14'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23f0b429'%3E~%3C/text%3E%3C/svg%3E">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        .glass {
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+        }
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(240, 180, 41, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(240, 180, 41, 0.05) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #34d399, #f0b429);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-number { color: #f0b429; font-family: 'Fira Code', monospace; }
+        .terminal-dot { width: 10px; height: 10px; border-radius: 999px; }
+        .skill-card:hover, .project-card:hover, .focus-card:hover, .foundation-card:hover { transform: translateY(-4px); }
+        .skill-card, .project-card, .focus-card, .foundation-card { transition: transform .25s ease, border-color .25s ease, background-color .25s ease; }
+
+        .architecture-node {
+            background: rgba(11, 15, 20, 0.88);
+            border: 1px solid rgba(240, 180, 41, 0.24);
+            border-radius: 14px;
+            padding: 14px 16px;
+            text-align: center;
+            min-width: 128px;
+        }
+        .architecture-arrow { color: #64748b; font-size: 1rem; flex: 0 0 auto; }
+        .evidence-grid-card { background: rgba(15, 23, 42, 0.46); border: 1px solid rgba(255, 255, 255, 0.07); }
+        details.case-study > summary { list-style: none; }
+        details.case-study > summary::-webkit-details-marker { display: none; }
+        details.case-study[open] .evidence-chevron { transform: rotate(180deg); }
+        .evidence-chevron { transition: transform .2s ease; }
+
+        .timeline-line { background: linear-gradient(180deg, rgba(240,180,41,0.5), rgba(52,211,153,0.5)); }
+        .timeline-dot { box-shadow: 0 0 0 4px rgba(11,15,20,1), 0 0 0 5px rgba(240,180,41,0.4); }
+
+        blockquote.voice { border-left: 3px solid #f0b429; }
+    </style>
+</head>
+<body class="bg-[#0b0f14] text-slate-300 antialiased selection:bg-amber-500/30 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-x-0 border-t-0">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-white font-bold text-lg md:text-xl code-font" aria-label="Go to home section">
+                ~/tanjim<span class="text-amber-400">.devops</span>
+            </a>
+
+            <div class="space-x-6 hidden md:flex items-center text-sm font-medium tracking-wide">
+                <a href="#about" class="hover:text-amber-400 transition">About</a>
+                <a href="#foundation" class="hover:text-amber-400 transition">Foundation</a>
+                <a href="#skills" class="hover:text-amber-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-amber-400 transition">Projects</a>
+                <a href="#journey" class="hover:text-amber-400 transition">Journey</a>
+                <a href="#contact" class="px-4 py-2 bg-amber-500 text-slate-950 font-semibold rounded-lg hover:bg-amber-400 transition">Contact</a>
+            </div>
+
+            <a href="#contact" class="md:hidden text-sm px-4 py-2 bg-amber-500 text-slate-950 font-semibold rounded-lg">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="home" class="relative pt-36 pb-24 px-6 overflow-hidden grid-bg">
+        <div class="absolute inset-0 bg-gradient-to-b from-amber-500/5 via-transparent to-[#0b0f14]"></div>
+        <div class="relative max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-7 text-xs font-semibold tracking-wider text-amber-300 uppercase bg-amber-400/10 rounded-full border border-amber-400/20">
+                <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                DevOps Intern @ Springer Capital
+            </div>
+
+            <p class="code-font text-emerald-400 text-sm md:text-base mb-5">Linux · Git/GitHub · Docker · CI/CD · AWS · Networking</p>
+
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-7 tracking-tight leading-tight">
+                Build it. Break it. <span class="gradient-text">Fix it.</span><br class="hidden md:block"> Real systems over theory.
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+                I'm a DevOps Intern with a systems-administration and networking background — Windows Server, Active Directory, Cisco routing — now applying that foundation to Linux, Docker, CI/CD, and cloud automation.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-14">
+                <a href="#projects" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-layer-group mr-2"></i> View Projects
+                </a>
+                <a href="https://github.com/tanahmeeedsx" target="_blank" rel="noopener noreferrer" class="px-8 py-4 glass text-white font-bold rounded-xl hover:bg-white/5 transition">
+                    <i class="fa-brands fa-github mr-2"></i> GitHub
+                </a>
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="px-8 py-4 glass text-white font-bold rounded-xl hover:bg-white/5 transition" aria-label="Download resume PDF">
+                    <i class="fa-solid fa-file-arrow-down mr-2"></i> Resume
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                <div class="glass rounded-2xl p-5">
+                    <p class="text-2xl font-bold text-white">22</p>
+                    <p class="text-xs text-slate-500 mt-1">Public GitHub repos</p>
+                </div>
+                <div class="glass rounded-2xl p-5">
+                    <p class="text-2xl font-bold text-white">244</p>
+                    <p class="text-xs text-slate-500 mt-1">Contributions this year</p>
+                </div>
+                <div class="glass rounded-2xl p-5">
+                    <p class="text-lg font-bold text-white">10 / 10</p>
+                    <p class="text-xs text-slate-500 mt-1">Git workflows mastered</p>
+                </div>
+                <div class="glass rounded-2xl p-5">
+                    <p class="text-lg font-bold text-white">3-Phase</p>
+                    <p class="text-xs text-slate-500 mt-1">AD home lab, built solo</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About / What I Solve -->
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-12 items-start">
+                <div>
+                    <div class="flex items-center gap-4 mb-7">
+                        <span class="section-number text-xl">01.</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">What I'm Building Toward</h2>
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white leading-snug mb-6">
+                        Most people learn DevOps tools first. I learned <span class="gradient-text">the systems underneath them first.</span>
+                    </h3>
+
+                    <p class="text-slate-400 leading-8 mb-6">
+                        Before Docker or GitHub Actions, I spent months building Windows Server domains, Active Directory environments, and Cisco networks entirely from scratch — not tutorials I copied, but labs I broke and repaired myself. That's the part of DevOps most junior portfolios skip.
+                    </p>
+                    <p class="text-slate-400 leading-8">
+                        Now, as a DevOps Intern at Springer Capital, I'm putting that foundation to work: Linux administration, Git/GitHub workflows, Docker, CI/CD pipelines, AWS deployments, and observability with Grafana Loki and HashiCorp Nomad. I treat every error as the actual lesson, not an obstacle to the lesson.
+                    </p>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden">
+                    <div class="flex items-center gap-2 px-5 py-4 border-b border-white/10 bg-slate-950/30">
+                        <span class="terminal-dot bg-red-400"></span>
+                        <span class="terminal-dot bg-amber-400"></span>
+                        <span class="terminal-dot bg-emerald-400"></span>
+                        <span class="ml-3 code-font text-xs text-slate-500">how-i-work.sh</span>
+                    </div>
+                    <div class="p-6 md:p-8 code-font text-sm leading-8">
+                        <p><span class="text-amber-400">$</span> start with fundamentals</p>
+                        <p class="text-slate-500">→ Linux, networking, Windows Server, Active Directory</p>
+                        <p><span class="text-amber-400">$</span> practice git deliberately</p>
+                        <p class="text-slate-500">→ branch, stash, squash, resolve conflicts, reflog recover</p>
+                        <p><span class="text-amber-400">$</span> automate delivery</p>
+                        <p class="text-slate-500">→ GitHub Actions, Docker, AWS EC2, systemd</p>
+                        <p><span class="text-amber-400">$</span> watch the system</p>
+                        <p class="text-slate-500">→ Grafana Loki, HashiCorp Nomad, logs and alerts</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+                <div class="focus-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-layer-group text-amber-400 text-2xl mb-4"></i>
+                    <h3 class="text-white font-semibold mb-2">Foundations First</h3>
+                    <p class="text-sm text-slate-500">Networking and systems administration before automation tools — so I understand what I'm automating.</p>
+                </div>
+                <div class="focus-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-code-compare text-amber-400 text-2xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-white font-semibold mb-2">Cross-Stack Practice</h3>
+                    <p class="text-sm text-slate-500">I rebuild the same small project in a new language each time — Python, then Go, then Node — to learn CI/CD patterns that transfer.</p>
+                </div>
+                <div class="focus-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-bug text-amber-400 text-2xl mb-4"></i>
+                    <h3 class="text-white font-semibold mb-2">Debug Before Ask</h3>
+                    <p class="text-sm text-slate-500">Failed pipelines, wrong flags, fast-forwards that shouldn't have fast-forwarded — I document the error and the fix, not just the success.</p>
+                </div>
+                <div class="focus-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-book-open text-amber-400 text-2xl mb-4"></i>
+                    <h3 class="text-white font-semibold mb-2">Learn In Public</h3>
+                    <p class="text-sm text-slate-500">Every lab and project gets written up and shared — 244 contributions and counting over the past year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foundation: Networking & Systems -->
+    <section id="foundation" class="py-24 px-6 bg-slate-900/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+                <div class="flex items-center gap-4">
+                    <span class="section-number text-xl">02.</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Where I Started</h2>
+                </div>
+                <p class="text-sm text-slate-500 max-w-xl">This is the part most DevOps-bootcamp portfolios don't have — a systems and networking foundation built by hand, before a single CI/CD pipeline.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="foundation-card glass rounded-2xl p-6 hover:border-emerald-500/50">
+                    <p class="code-font text-[11px] text-emerald-400 mb-3">3-PHASE HOME LAB</p>
+                    <h3 class="text-white font-semibold mb-2">Windows Server &amp; Active Directory</h3>
+                    <p class="text-sm text-slate-500 leading-6">Built a domain from zero on VirtualBox: AD DS, DNS, DHCP, OU design, Group Policy, and a departmental file server with NTFS/SMB permissions and FSRM (quotas, file screening, auto-classification).</p>
+                </div>
+                <div class="foundation-card glass rounded-2xl p-6 hover:border-emerald-500/50">
+                    <p class="code-font text-[11px] text-emerald-400 mb-3">CISCO PACKET TRACER</p>
+                    <h3 class="text-white font-semibold mb-2">Multi-VLAN Branch Network</h3>
+                    <p class="text-sm text-slate-500 leading-6">Designed an isolated 3-department network on one router using VLAN segmentation, Router-on-a-Stick sub-interfaces, and /26 subnetting of a single /24 block, plus centralized DHCP.</p>
+                </div>
+                <div class="foundation-card glass rounded-2xl p-6 hover:border-emerald-500/50">
+                    <p class="code-font text-[11px] text-emerald-400 mb-3">7 ROUTING LABS</p>
+                    <h3 class="text-white font-semibold mb-2">From Hubs to Multi-Router Topologies</h3>
+                    <p class="text-sm text-slate-500 leading-6">Hub and switch LANs, static routing across 2–4 routers in triangular and square topologies, and FTP server configuration — tested in both real-time and simulation mode.</p>
+                </div>
+                <div class="foundation-card glass rounded-2xl p-6 hover:border-emerald-500/50">
+                    <p class="code-font text-[11px] text-emerald-400 mb-3">SOHO ROUTER ADMIN</p>
+                    <h3 class="text-white font-semibold mb-2">Router Administration &amp; Security</h3>
+                    <p class="text-sm text-slate-500 leading-6">Configured PPPoE, DHCP reservation, QoS, NAT, port forwarding, SPI firewall rules, IP/MAC binding, and DDNS on a TP-Link Archer C54 — plus PowerShell-based hardware/driver troubleshooting.</p>
+                </div>
+            </div>
+
+            <blockquote class="voice mt-10 pl-6 py-2 text-slate-300 italic max-w-3xl">
+                "The real value wasn't running the commands, it was hitting the errors and understanding why — before fixing them."
+                <footer class="not-italic text-sm text-slate-500 mt-2">— from my own project notes</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="section-number text-xl">03.</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Tech Arsenal</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="skill-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-terminal text-3xl text-amber-400 mb-4"></i>
+                    <h3 class="text-white font-semibold mb-3">Linux &amp; Scripting</h3>
+                    <p class="text-sm text-slate-500 leading-6">Ubuntu administration, Bash, PowerShell, file/process/permission management</p>
+                </div>
+                <div class="skill-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-brands fa-git-alt text-3xl text-amber-400 mb-4"></i>
+                    <h3 class="text-white font-semibold mb-3">Version Control</h3>
+                    <p class="text-sm text-slate-500 leading-6">Git, GitHub, GitHub Actions, SSH auth, branching, conflict resolution, reflog</p>
+                </div>
+                <div class="skill-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-brands fa-docker text-3xl text-amber-400 mb-4"></i>
+                    <h3 class="text-white font-semibold mb-3">Containers &amp; Orchestration</h3>
+                    <p class="text-sm text-slate-500 leading-6">Docker, HashiCorp Nomad — Kubernetes next</p>
+                </div>
+                <div class="skill-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-code-merge text-3xl text-amber-400 mb-4"></i>
+                    <h3 class="text-white font-semibold mb-3">CI/CD &amp; Security</h3>
+                    <p class="text-sm text-slate-500 leading-6">GitHub Actions pipelines, automated testing, CodeQL, secret scanning</p>
+                </div>
+                <div class="skill-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-brands fa-aws text-3xl text-amber-400 mb-4"></i>
+                    <h3 class="text-white font-semibold mb-3">Cloud &amp; Deployment</h3>
+                    <p class="text-sm text-slate-500 leading-6">AWS EC2, systemd services, REST APIs — Terraform next</p>
+                </div>
+                <div class="skill-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-chart-area text-3xl text-amber-400 mb-4"></i>
+                    <h3 class="text-white font-semibold mb-3">Observability</h3>
+                    <p class="text-sm text-slate-500 leading-6">Grafana Loki, log &amp; cardinality auditing, application monitoring</p>
+                </div>
+                <div class="skill-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-network-wired text-3xl text-amber-400 mb-4"></i>
+                    <h3 class="text-white font-semibold mb-3">Networking &amp; Systems</h3>
+                    <p class="text-sm text-slate-500 leading-6">Active Directory, DNS/DHCP/GPO, NTFS/SMB, VLANs, Cisco routing, subnetting</p>
+                </div>
+                <div class="skill-card p-6 glass rounded-2xl hover:border-amber-500/50">
+                    <i class="fa-solid fa-code text-3xl text-amber-400 mb-4"></i>
+                    <h3 class="text-white font-semibold mb-3">Languages</h3>
+                    <p class="text-sm text-slate-500 leading-6">Python (FastAPI), Go, Node.js/JavaScript, Java, C</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 px-6 bg-slate-900/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+                <div class="flex items-center gap-4">
+                    <span class="section-number text-xl">04.</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Projects</h2>
+                </div>
+                <p class="text-sm text-slate-500 max-w-xl">Selected work — each one is a real repository, not a demo screenshot.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <article class="project-card group relative overflow-hidden rounded-3xl glass p-8 hover:border-amber-500/50">
+                    <div class="flex justify-between items-start mb-7">
+                        <div class="p-3 bg-amber-500/10 rounded-xl">
+                            <i class="fa-solid fa-diagram-project text-amber-400 text-2xl"></i>
+                        </div>
+                        <a href="https://github.com/tanahmeeedsx/springer-capital-devops-intern-final-assesment" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition" aria-label="View DevOps intern final assessment on GitHub">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <p class="code-font text-xs text-amber-400 mb-3">DOCKER / NOMAD / GRAFANA LOKI</p>
+                    <h3 class="text-2xl font-bold text-white mb-5">DevOps Intern Final Assessment</h3>
+                    <div class="space-y-5 text-sm leading-7">
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Context</p>
+                            <p class="text-slate-400">The capstone project for my Springer Capital internship — a full workflow rather than a single tool demo.</p>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">What I built</p>
+                            <p class="text-slate-400">An end-to-end DevOps workflow using Linux, Git, Docker, CI/CD, HashiCorp Nomad for orchestration, and Grafana Loki for centralized log monitoring.</p>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">What I learned</p>
+                            <p class="text-white font-semibold">How container orchestration and log observability fit together outside of Kubernetes — Nomad as a lighter-weight scheduler.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-7 text-[10px] font-bold uppercase tracking-wider">
+                        <span class="px-2.5 py-1.5 bg-slate-800 rounded">Docker</span>
+                        <span class="px-2.5 py-1.5 bg-slate-800 rounded">HashiCorp Nomad</span>
+                        <span class="px-2.5 py-1.5 bg-slate-800 rounded">Grafana Loki</span>
+                        <span class="px-2.5 py-1.5 bg-slate-800 rounded">CI/CD</span>
+                    </div>
+                    <a href="#nomad-evidence" class="inline-flex items-center mt-7 text-sm font-semibold text-amber-300 hover:text-white transition">
+                        View Project Walkthrough <i class="fa-solid fa-arrow-down ml-2 text-xs"></i>
+                    </a>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card group relative overflow-hidden rounded-3xl glass p-8 hover:border-emerald-500/50">
+                    <div class="flex justify-between items-start mb-7">
+                        <div class="p-3 bg-emerald-500/10 rounded-xl">
+                            <i class="fa-solid fa-bolt text-emerald-400 text-2xl"></i>
+                        </div>
+                        <a href="https://github.com/tanahmeeedsx/mini-todo-api" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition" aria-label="View Mini Todo API on GitHub">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <p class="code-font text-xs text-emerald-400 mb-3">PYTHON / FASTAPI / GITHUB ACTIONS / AWS EC2</p>
+                    <h3 class="text-2xl font-bold text-white mb-5">Mini Todo API — Git-to-Deployment CI/CD</h3>
+                    <div class="space-y-5 text-sm leading-7">
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Context</p>
+                            <p class="text-slate-400">My first full Git-to-deployment workflow — the application was the practice environment, not the point.</p>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">What I built</p>
+                            <p class="text-slate-400">A small FastAPI app with a GitHub Actions pipeline for automated tests, dependency and secret checks, then deployment to AWS EC2 managed with systemd.</p>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">What I learned</p>
+                            <p class="text-white font-semibold">Debugging failed CI runs one at a time until the pipeline went green and the app answered at a live endpoint.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-7 text-[10px] font-bold uppercase tracking-wider">
+                        <span class="px-2.5 py-1.5 bg-slate-800 rounded">FastAPI</span>
+                        <span class="px-2.5 py-1.5 bg-slate-800 rounded">GitHub Actions</span>
+                        <span class="px-2.5 py-1.5 bg-slate-800 rounded">AWS EC2</span>
+                        <span class="px-2.5 py-1.5 bg-slate-800 rounded">systemd</span>
+                    </div>
+                    <a href="#cicd-evidence" class="inline-flex items-center mt-7 text-sm font-semibold text-emerald-300 hover:text-white transition">
+                        View Project Walkthrough <i class="fa-solid fa-arrow-down ml-2 text-xs"></i>
+                    </a>
+                </article>
+            </div>
+
+            <!-- More projects strip -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+                <a href="https://github.com/tanahmeeedsx/bongo-devops-core" target="_blank" rel="noopener noreferrer" class="project-card block glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <div class="flex items-center justify-between mb-3">
+                        <i class="fa-brands fa-git-alt text-amber-400 text-xl"></i>
+                        <i class="fa-brands fa-github text-slate-500 text-sm"></i>
+                    </div>
+                    <h4 class="text-white font-semibold text-sm mb-2">Git &amp; GitHub Mastery — 10 Scenarios</h4>
+                    <p class="text-xs text-slate-500 leading-5">Branching, stash, squash merge, conflict resolution, and reflog recovery, done deliberately.</p>
+                </a>
+                <a href="https://github.com/tanahmeeedsx/windows-server-2022-enterprise-file-server" target="_blank" rel="noopener noreferrer" class="project-card block glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <div class="flex items-center justify-between mb-3">
+                        <i class="fa-solid fa-server text-amber-400 text-xl"></i>
+                        <i class="fa-brands fa-github text-slate-500 text-sm"></i>
+                    </div>
+                    <h4 class="text-white font-semibold text-sm mb-2">Enterprise File Server</h4>
+                    <p class="text-xs text-slate-500 leading-5">Windows Server 2022, Active Directory, NTFS/SMB permissions, and FSRM.</p>
+                </a>
+                <a href="https://github.com/tanahmeeedsx/qr-code-generator" target="_blank" rel="noopener noreferrer" class="project-card block glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <div class="flex items-center justify-between mb-3">
+                        <i class="fa-brands fa-golang text-amber-400 text-xl"></i>
+                        <i class="fa-brands fa-github text-slate-500 text-sm"></i>
+                    </div>
+                    <h4 class="text-white font-semibold text-sm mb-2">QR Code Generator API</h4>
+                    <p class="text-xs text-slate-500 leading-5">A small API built in Go — my first step into a second language.</p>
+                </a>
+                <a href="https://github.com/tanahmeeedsx/git-github-workflow" target="_blank" rel="noopener noreferrer" class="project-card block glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <div class="flex items-center justify-between mb-3">
+                        <i class="fa-solid fa-shield-halved text-amber-400 text-xl"></i>
+                        <i class="fa-brands fa-github text-slate-500 text-sm"></i>
+                    </div>
+                    <h4 class="text-white font-semibold text-sm mb-2">DevSecOps CI/CD Pipeline</h4>
+                    <p class="text-xs text-slate-500 leading-5">Automated testing, CodeQL scanning, secret scanning, and GitHub Pages deployment.</p>
+                </a>
+            </div>
+            <p class="text-center text-sm text-slate-500 mt-8">
+                Also on GitHub: a Go URL shortener (in progress, learning CI/CD to AWS EC2), an Antigravity Tic-Tac-Toe terminal game with Jest tests and CI, and full system-administration lab notes.
+                <a href="https://github.com/tanahmeeedsx?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">See all 22 repos →</a>
+            </p>
+
+            <!-- Case studies -->
+            <div id="project-evidence" class="mt-14">
+                <div class="mb-8 max-w-3xl">
+                    <p class="code-font text-xs text-amber-400 mb-3">PROJECT WALKTHROUGHS</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">How These Actually Work</h3>
+                </div>
+
+                <!-- Nomad/Loki walkthrough -->
+                <details id="nomad-evidence" class="case-study glass rounded-3xl overflow-hidden mb-8" open>
+                    <summary class="cursor-pointer px-6 md:px-8 py-6 flex items-center justify-between gap-4 hover:bg-white/[0.02] transition">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-amber-500/10 rounded-xl"><i class="fa-solid fa-diagram-project text-amber-400"></i></div>
+                            <div>
+                                <p class="code-font text-[11px] text-amber-400 mb-1">INTERNSHIP PROJECT</p>
+                                <h4 class="text-xl font-bold text-white">DevOps Intern Final Assessment — Walkthrough</h4>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down evidence-chevron text-slate-500"></i>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-8 border-t border-white/5">
+                        <div class="pt-8">
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-5">Workflow</p>
+                            <div class="evidence-grid-card rounded-2xl p-5 md:p-7 overflow-x-auto">
+                                <div class="flex items-center gap-3 min-w-[720px] justify-center code-font text-xs">
+                                    <div class="architecture-node"><i class="fa-brands fa-git-alt text-lg mb-2 text-white"></i><br>Git / Linux</div>
+                                    <i class="fa-solid fa-arrow-right architecture-arrow"></i>
+                                    <div class="architecture-node"><i class="fa-brands fa-docker text-lg mb-2 text-sky-300"></i><br>Docker</div>
+                                    <i class="fa-solid fa-arrow-right architecture-arrow"></i>
+                                    <div class="architecture-node"><i class="fa-solid fa-cubes text-lg mb-2 text-amber-300"></i><br>HashiCorp Nomad</div>
+                                    <i class="fa-solid fa-arrow-right architecture-arrow"></i>
+                                    <div class="architecture-node"><i class="fa-solid fa-chart-area text-lg mb-2 text-emerald-300"></i><br>Grafana Loki</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-5 mt-7">
+                            <div class="evidence-grid-card rounded-2xl p-5">
+                                <div class="flex items-center gap-3 mb-3"><i class="fa-brands fa-readme text-amber-300"></i><h5 class="font-semibold text-white">Repository</h5></div>
+                                <p class="text-sm text-slate-500 leading-6">README covers the build steps, the Nomad job configuration, and how logs flow into Loki for querying.</p>
+                            </div>
+                            <div class="evidence-grid-card rounded-2xl p-5">
+                                <div class="flex items-center gap-3 mb-3"><i class="fa-solid fa-eye text-amber-300"></i><h5 class="font-semibold text-white">What I'm still learning</h5></div>
+                                <p class="text-sm text-slate-500 leading-6">Cardinality-aware labeling in Loki, and comparing Nomad's scheduling model against Kubernetes for future projects.</p>
+                            </div>
+                        </div>
+                        <div class="mt-7 flex flex-wrap gap-3">
+                            <a href="https://github.com/tanahmeeedsx/springer-capital-devops-intern-final-assesment" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-3 bg-amber-500 text-slate-950 rounded-xl text-sm font-semibold hover:bg-amber-400 transition"><i class="fa-brands fa-github mr-2"></i> View Repository</a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- CI/CD walkthrough -->
+                <details id="cicd-evidence" class="case-study glass rounded-3xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 md:px-8 py-6 flex items-center justify-between gap-4 hover:bg-white/[0.02] transition">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-emerald-500/10 rounded-xl"><i class="fa-solid fa-code-branch text-emerald-400"></i></div>
+                            <div>
+                                <p class="code-font text-[11px] text-emerald-400 mb-1">PERSONAL PROJECT</p>
+                                <h4 class="text-xl font-bold text-white">Mini Todo API — Walkthrough</h4>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down evidence-chevron text-slate-500"></i>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-8 border-t border-white/5">
+                        <div class="pt-8">
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-5">Workflow</p>
+                            <div class="evidence-grid-card rounded-2xl p-5 md:p-7 overflow-x-auto">
+                                <div class="flex items-center gap-3 min-w-[760px] justify-center code-font text-xs">
+                                    <div class="architecture-node"><i class="fa-solid fa-code-commit text-lg mb-2 text-white"></i><br>Git Commit</div>
+                                    <i class="fa-solid fa-arrow-right architecture-arrow"></i>
+                                    <div class="architecture-node"><i class="fa-brands fa-github text-lg mb-2 text-white"></i><br>Pull Request</div>
+                                    <i class="fa-solid fa-arrow-right architecture-arrow"></i>
+                                    <div class="architecture-node"><i class="fa-solid fa-gears text-lg mb-2 text-emerald-300"></i><br>GitHub Actions</div>
+                                    <i class="fa-solid fa-arrow-right architecture-arrow"></i>
+                                    <div class="architecture-node"><i class="fa-solid fa-shield-halved text-lg mb-2 text-amber-300"></i><br>Test + Security Scan</div>
+                                    <i class="fa-solid fa-arrow-right architecture-arrow"></i>
+                                    <div class="architecture-node"><i class="fa-brands fa-aws text-lg mb-2 text-sky-300"></i><br>AWS EC2</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-5 mt-7">
+                            <div class="evidence-grid-card rounded-2xl p-5">
+                                <div class="flex items-center gap-3 mb-3"><i class="fa-brands fa-readme text-emerald-300"></i><h5 class="font-semibold text-white">Repository</h5></div>
+                                <p class="text-sm text-slate-500 leading-6">README documents the FastAPI app, the pipeline stages, and the systemd unit that keeps it running on EC2.</p>
+                            </div>
+                            <div class="evidence-grid-card rounded-2xl p-5">
+                                <div class="flex items-center gap-3 mb-3"><i class="fa-solid fa-bug text-emerald-300"></i><h5 class="font-semibold text-white">Real issues I hit</h5></div>
+                                <p class="text-sm text-slate-500 leading-6">Security-group access, port mapping, and a pipeline that failed silently until I added proper dependency checks.</p>
+                            </div>
+                        </div>
+                        <div class="mt-7 flex flex-wrap gap-3">
+                            <a href="https://github.com/tanahmeeedsx/mini-todo-api" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-3 bg-emerald-500 text-slate-950 rounded-xl text-sm font-semibold hover:bg-emerald-400 transition"><i class="fa-brands fa-github mr-2"></i> View Repository</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- How I Approach My Work -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="section-number text-xl">05.</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Principles I'm Building Habits Around</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
+                <div class="focus-card glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <i class="fa-solid fa-heart-pulse text-amber-400 text-2xl mb-4"></i>
+                    <h3 class="text-white font-semibold mb-2">Reliability</h3>
+                    <p class="text-sm text-slate-500 leading-6">Health checks, service management, graceful recovery.</p>
+                </div>
+                <div class="focus-card glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <i class="fa-solid fa-lock text-amber-400 text-2xl mb-4"></i>
+                    <h3 class="text-white font-semibold mb-2">Security</h3>
+                    <p class="text-sm text-slate-500 leading-6">Least privilege, secrets out of Git, CodeQL and secret scanning.</p>
+                </div>
+                <div class="focus-card glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <i class="fa-solid fa-eye text-amber-400 text-2xl mb-4"></i>
+                    <h3 class="text-white font-semibold mb-2">Observability</h3>
+                    <p class="text-sm text-slate-500 leading-6">Logs and dashboards that actually explain what happened.</p>
+                </div>
+                <div class="focus-card glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <i class="fa-solid fa-code-branch text-amber-400 text-2xl mb-4"></i>
+                    <h3 class="text-white font-semibold mb-2">Safe Delivery</h3>
+                    <p class="text-sm text-slate-500 leading-6">Tests and checks before merge, not after something breaks.</p>
+                </div>
+                <div class="focus-card glass rounded-2xl p-6 hover:border-amber-500/50">
+                    <i class="fa-solid fa-book text-amber-400 text-2xl mb-4"></i>
+                    <h3 class="text-white font-semibold mb-2">Documentation</h3>
+                    <p class="text-sm text-slate-500 leading-6">If it's not written down, the next person re-learns it the hard way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey -->
+    <section id="journey" class="py-24 px-6 bg-slate-900/50 border-y border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center gap-4 mb-14">
+                <span class="section-number text-xl">06.</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Journey</h2>
+            </div>
+
+            <div class="relative pl-10">
+                <div class="timeline-line absolute left-[7px] top-2 bottom-2 w-[2px]"></div>
+
+                <div class="relative mb-12">
+                    <div class="timeline-dot absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-amber-400"></div>
+                    <p class="code-font text-xs text-amber-400 mb-1">DEC 2022 — DEC 2025</p>
+                    <h3 class="text-white font-semibold text-lg">B.Sc. in Computer Engineering</h3>
+                    <p class="text-slate-500 text-sm mt-1">Bangladesh University of Business &amp; Technology (BUBT)</p>
+                </div>
+
+                <div class="relative mb-12">
+                    <div class="timeline-dot absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-amber-400"></div>
+                    <p class="code-font text-xs text-amber-400 mb-1">NOV 2025 — FEB 2026</p>
+                    <h3 class="text-white font-semibold text-lg">Junior Executive</h3>
+                    <p class="text-slate-500 text-sm mt-1">SkyTech Solutions, Uttara — client communication and lead handling</p>
+                </div>
+
+                <div class="relative mb-12">
+                    <div class="timeline-dot absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-emerald-400"></div>
+                    <p class="code-font text-xs text-emerald-400 mb-1">AUG 2026 — PRESENT</p>
+                    <h3 class="text-white font-semibold text-lg">DevOps Intern</h3>
+                    <p class="text-slate-500 text-sm mt-1">Springer Capital — Linux, Docker, CI/CD, Nomad, Grafana Loki, cloud fundamentals</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-slate-600"></div>
+                    <p class="code-font text-xs text-slate-500 mb-1">WHAT'S NEXT</p>
+                    <h3 class="text-white font-semibold text-lg">AWS · Kubernetes · Terraform · DevSecOps</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recruiter / CTA -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-12 text-center overflow-hidden relative">
+            <div class="absolute -top-20 -right-20 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-20 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
+            <div class="relative">
+                <p class="code-font text-xs text-amber-400 mb-3">BUILD · BREAK · FIX · REPEAT</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-5">Still early. Still building. Still documenting all of it.</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto leading-8 mb-8">I'm growing into a well-rounded DevOps Engineer by earning each layer through real projects — networking and systems first, automation and cloud next.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://github.com/tanahmeeedsx" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition">
+                        <i class="fa-brands fa-github mr-2"></i> GitHub
+                    </a>
+                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 glass text-white font-bold rounded-xl hover:bg-white/5 transition">
+                        <i class="fa-solid fa-file-arrow-down mr-2"></i> Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="py-20 border-t border-white/5 bg-slate-950/30">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <p class="code-font text-xs text-amber-400 mb-3">OPEN TO DEVOPS &amp; CLOUD OPPORTUNITIES</p>
+            <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">Let's Connect</h2>
+            <p class="text-slate-400 mb-8 max-w-2xl mx-auto leading-7">Open to conversations and opportunities around DevOps, cloud infrastructure, Linux, networking, and automation.</p>
+
+            <div class="flex justify-center space-x-6 text-2xl mb-8">
+                <a href="https://www.linkedin.com/in/tanahmedd" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-400 transition" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/tanahmeeedsx" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-400 transition" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:tanjimahmed450@gmail.com" class="text-slate-400 hover:text-amber-400 transition" aria-label="Send email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <p class="text-sm text-slate-500">LinkedIn · GitHub · Email · Resume</p>
+            <p class="mt-12 text-xs text-slate-600 code-font">Built by Tanjim Ahmed · Dhaka, Bangladesh · &copy; 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
